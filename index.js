@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { createLedger } = require("./xml/imports/create_ledger");
+const { createPaymentVoucher } = require("./xml/imports/create-payment_voucher");
 
 //rest object
 const app = express();
@@ -28,9 +29,7 @@ app.post("/ledger", async (req, res) => {
 
 app.post("/voucher", async (req, res) => {
   const voucherData = req.body;
-  // console.log("Ledger Details:", req.body);
-
-
+  console.log("Voucher Details:", req.body);
   try {
     // console.log(ledgerData);
     await createPaymentVoucher({voucherData});

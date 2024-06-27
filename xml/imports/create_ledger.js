@@ -12,7 +12,18 @@ const xml2js = require("xml2js");
 // const company = "CPS";
 
 
-async function createLedger(ledgerData) {
+async function createLedger(data) {
+  // Extract the nested ledgerData object
+  const ledgerData = data.ledgerData;
+
+  // Log the extracted ledgerData object
+  console.log("ledgerData:", JSON.stringify(ledgerData, null, 2));
+
+  // Destructure the required properties from the nested ledgerData object
+  const { ledgerName, ledgerGroup } = ledgerData;
+
+  console.log("ledgerName:", ledgerName);
+  console.log("ledgerGroup:", ledgerGroup);
 
   const tallyURL = "http://localhost:9000";
   const xmlRequest = `
