@@ -15,8 +15,7 @@ const xml2js = require("xml2js");
 async function createLedger(data) {
   // Extract the nested ledgerData object
   const ledgerData = data.ledgerData;
-
-  // Log the extracted ledgerData object
+  
   console.log("ledgerData:", JSON.stringify(ledgerData, null, 2));
 
   // Destructure the required properties from the nested ledgerData object
